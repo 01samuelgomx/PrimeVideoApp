@@ -1,11 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import "../scss/index.scss"; 
+import "../scss/index.scss";
 import axios from "axios";
 import MovieCard from "../MovieCard";
-import { Movie } from "@/types";
-
+import { Movie } from "@/types/movie";
 
 export default function MovieList() {
   const [movies, setMovies] = useState<Movie[]>([]);
@@ -22,22 +21,19 @@ export default function MovieList() {
         api_key: "6a7ebe56dcfa9eab891cb2fe34ed0a34",
         language: "pt-BR",
       },
-    }).then((response) => {
-      setMovies(response.data.results);
-    }).catch((error) => {
-      console.error("Error fetching movies:", error);
-    });
+    })
+      .then((response) => {
+        setMovies(response.data.results);
+      })
+      .catch((error) => {
+        console.error("Error fetching movies:", error);
+      });
   };
 
   return (
     <ul className="movieList">
       {movies.map((movie) => (
-
-      <MovieCard 
-      key={movie.id}
-      movie={movie} 
-      />
-
+        <MovieCard key={movie.id} movie={movie} />
       ))}
     </ul>
   );

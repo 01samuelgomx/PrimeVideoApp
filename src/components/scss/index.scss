@@ -1,17 +1,50 @@
-.Navbar{
+.Navbar {
   background-color: #1616166a;
-  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, .3), 0 8px 12px 6px rgba(0, 0, 0, .15);
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.3), 0 8px 12px 6px rgba(0, 0, 0, 0.15);
   padding: 15px 3%;
 }
-.logo{
-width: 100px;
+// ---------------------
+//     Movie Card
+// ---------------------
+.logo {
+  width: 100px;
 }
-.movieItem {
-  margin: 20px;
+.movieCard {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px 1fr));
+  gap: 15px;
+  list-style: none;
+  width: 100%;
 }
-.title{
-  color: #FFFF !important;
+.poster {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
-.description{
+.movieInfo h2 {
+  color: #fbfbfbba;
+}
+.hiddenContent{
+  color: #fbfbfbba;
+  font-size: 12px;
+}
+// ---------------------
+//     Movie List
+// ---------------------
+.movieList {
+
+}
+.title {
+  color: #ffff !important;
+}
+.description {
   color: #c5ce10 !important;
+}
+.bannerMovie {
+  width: 150px;
+}
+.starMovie {
+  display: flex;
+  color: #ffff;
+  font-size: 15px;
 }
